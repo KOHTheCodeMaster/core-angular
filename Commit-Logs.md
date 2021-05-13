@@ -1,3 +1,10 @@
+# 4th Commit - Component selector
+--------------------------------
+
+1. CSS Selector -> `selector: 'app-comp1'`
+2. Attribute Selector -> `selector: '[app-comp1]'`
+3. Class Selector -> `selector: '.app-comp1'`
+
 # 3rd Commit - HTML & CSS inline template
 --------------------------------
 
