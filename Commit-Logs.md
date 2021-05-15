@@ -1,3 +1,29 @@
+# 7th Commit - Angular Built-in Directives
+--------------------------------
+
+1. *ngIf as a single if -> `<p *ngIf="true">This is demo of ngIf directive.</p>`
+2. *ngIf as if else if else ->
+```html
+    <!--  If somethingIsTrue is true  -->
+    <p *ngIf="somethingIsTrue; else checkSecondExpression">This is If block.</p>
+    <!--  Else If anotherThingIsTrue is true  -->
+    <ng-template #checkSecondExpression>
+      <p *ngIf="anotherThingIsTrue; else checkElseExpression">This is Else If block.</p>
+    </ng-template>
+    <!--  Else  -->
+    <ng-template #checkElseExpression>
+      <p>This is Else block.</p>
+    </ng-template>
+```
+3 . `<ng-template>` is a template element that Angular uses with structural directives `(*ngIf, *ngFor, [ngSwitch] and custom directives)`.
+Angular consumes the `<ng-template>` in the finished DOM by replacing it with diagnostic comments according to the directives applied.
+
+4 . Styling elements dynamically using `ng-style` which requires JS Object with CSS Style attributes as key followed by appropriate value.
+1. `<div [ngStyle]="{ 'background-color': getBGColor() }">`
+2. `<div [ngStyle]="{ 'backgroundColor': getBGColor() }">`
+
+Note: `[ngStyle]` is not an attribute but rather property binding for ngStyle directive.
+
 # 6th Commit - Passing Event Data & 2-Way Data Binding
 --------------------------------
 

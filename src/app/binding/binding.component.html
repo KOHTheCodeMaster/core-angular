@@ -31,5 +31,25 @@
   <input id="inputName2" type="text" [(ngModel)]="name">
   <p>Name: {{ name }}</p>
 </div>
+<hr>
+
+<div class="d-flex align-items-center">
+  <h3>Angular Built-in Directive:</h3>
+
+  <!--  <div [ngStyle]="{ 'background-color': getAgeBGColor() }" class="ms-5">-->
+  <div [ngStyle]="{ backgroundColor: getAgeBGColor() }" class="ms-5">
+    <!--  If disableAgePlus is true  -->
+    <p *ngIf="disableAgePlus; else minAgeLimitReached">Max. Age Limit Reached!</p>
+    <!--  Else If disableAgeMinus is true  -->
+    <ng-template #minAgeLimitReached>
+      <p *ngIf="disableAgeMinus; else validAge">Min. Age Limit Reached!</p>
+    </ng-template>
+    <!--  Else  -->
+    <ng-template #validAge>
+      <!--  ngStyle  -->
+      <p class="mx-2">Age: {{ getAge() }}</p>
+    </ng-template>
+  </div>
+</div>
 
 

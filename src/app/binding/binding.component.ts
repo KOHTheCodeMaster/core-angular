@@ -17,8 +17,11 @@ export class BindingComponent implements OnInit {
     setTimeout(() => {
       this.disableAgePlus = false;
       this.disableAgeMinus = false;
-    }, 2000);
+    }, 1000);
 
+  }
+
+  ngOnInit(): void {
   }
 
   incrementAge() {
@@ -37,10 +40,12 @@ export class BindingComponent implements OnInit {
     return this.age;
   }
 
-  ngOnInit(): void {
-  }
-
   updateName(event: Event) {
     this.name = (<HTMLInputElement>event.target).value;
   }
+
+  getAgeBGColor(): string {
+    return (this.age == 50 || this.age == 40) ? 'red' : 'green';
+  }
+
 }
