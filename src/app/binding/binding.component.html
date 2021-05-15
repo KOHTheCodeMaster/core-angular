@@ -1,0 +1,14 @@
+<h3>String Interpolation:<em>{{ name }} is {{ getAge() }} {{ 'years' }} old.</em></h3>
+<p>Note: Expression enclosed by {{ 'expr' }} must return String or object that can be converted to String.</p>
+
+<div>
+  <h3 [innerText]="'Property Binding:'"></h3>
+  <!--
+      Event Binding allows html onSomething properties to be enclosed within () without 'on'
+      followed by typescript expression.
+      Example: onClick property -> (click)="onBtnClick()"
+  -->
+  <button class="btn btn-info m-1" [disabled]="disableAgePlus" (click)="incrementAge()">+</button>
+  <button class="btn btn-danger m-1" [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
+  <p>Age: {{ getAge() }}</p>
+</div>
