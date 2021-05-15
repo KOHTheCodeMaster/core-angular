@@ -1,8 +1,14 @@
+# 6th Commit - Passing Event Data & 2-Way Data Binding
+--------------------------------
+
+1. Passing Event Data -> `<input type="text" (input)="updateName($event)">`
+2. 2-Way Data Binding -> `<input type="text" [(ngModel)]="name">`
+
 # 5th Commit - Property & Event Binding
 --------------------------------
 
 1. Property Binding -> `<h3 [innerText]="'Property Binding Text'"></h3>`
-1. Event Binding -> `<button (click)="onClickEventHandler()"></button>`
+2. Event Binding -> `<button (click)="onClickEventHandler()"></button>`
 
 # 4th Commit - Component selector
 --------------------------------

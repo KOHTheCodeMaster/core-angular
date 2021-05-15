@@ -40,4 +40,7 @@ export class BindingComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  updateName(event: Event) {
+    this.name = (<HTMLInputElement>event.target).value;
+  }
 }

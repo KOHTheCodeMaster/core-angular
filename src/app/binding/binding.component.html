@@ -1,14 +1,35 @@
-<h3>String Interpolation:<em>{{ name }} is {{ getAge() }} {{ 'years' }} old.</em></h3>
+<h3>String Interpolation: <em class="bg-danger">{{ name }} is {{ getAge() }} {{ 'years' }} old.</em></h3>
 <p>Note: Expression enclosed by {{ 'expr' }} must return String or object that can be converted to String.</p>
+<hr>
 
-<div>
+<div class="d-flex">
   <h3 [innerText]="'Property Binding:'"></h3>
   <!--
       Event Binding allows html onSomething properties to be enclosed within () without 'on'
       followed by typescript expression.
       Example: onClick property -> (click)="onBtnClick()"
   -->
-  <button class="btn btn-info m-1" [disabled]="disableAgePlus" (click)="incrementAge()">+</button>
-  <button class="btn btn-danger m-1" [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
-  <p>Age: {{ getAge() }}</p>
+  <div class="d-flex align-items-center ms-5">
+    <button class="btn btn-info mx-2" [disabled]="disableAgePlus" (click)="incrementAge()">+</button>
+    <p class="mx-2">Age: {{ getAge() }}</p>
+    <button class="btn btn-danger mx-2" [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
+  </div>
 </div>
+<hr>
+
+<div>
+  <h3>Passing Event Data To Event Binding:</h3>
+  <label for="inputName"></label>
+  <input id="inputName" type="text" (input)="updateName($event)">
+  <p>Name: {{ name }}</p>
+</div>
+<hr>
+
+<div>
+  <h3>2-Way Data Binding using ngModel directive:</h3>
+  <label for="inputName2"></label>
+  <input id="inputName2" type="text" [(ngModel)]="name">
+  <p>Name: {{ name }}</p>
+</div>
+
+
