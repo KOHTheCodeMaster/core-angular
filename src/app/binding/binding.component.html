@@ -10,9 +10,14 @@
       Example: onClick property -> (click)="onBtnClick()"
   -->
   <div class="d-flex align-items-center ms-5">
-    <button class="btn btn-info mx-2" [disabled]="disableAgePlus" (click)="incrementAge()">+</button>
+    <button class="btn mx-2"
+            [ngClass]="{'btn-outline-info': disableAgePlus, 'btn-info': !disableAgePlus}"
+            [disabled]="disableAgePlus" (click)="incrementAge()">+
+    </button>
     <p class="mx-2">Age: {{ getAge() }}</p>
-    <button class="btn btn-danger mx-2" [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
+    <button class="btn mx-2"
+            [ngClass]="{'btn-outline-danger': disableAgeMinus, 'btn-danger': !disableAgeMinus}"
+            [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
   </div>
 </div>
 <hr>

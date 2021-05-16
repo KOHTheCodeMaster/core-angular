@@ -1,3 +1,9 @@
+# 8th Commit - ngClass directive
+--------------------------------
+
+1. ngClass -> `<p>[ngClass]="{'bg-info': booleanExpression}"</p>`
+2. CSS class is added to the element if the booleanExpression is true.
+
 # 7th Commit - Angular Built-in Directives
 --------------------------------
 
