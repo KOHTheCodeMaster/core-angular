@@ -11,6 +11,7 @@ export class BindingComponent implements OnInit {
   age: number = 45;
   disableAgePlus: boolean = true;
   disableAgeMinus: boolean = true;
+  componentsList: string[] = ['A1', 'A2'];
 
   constructor() {
 
@@ -48,4 +49,13 @@ export class BindingComponent implements OnInit {
     return (this.age == 50 || this.age == 40) ? 'red' : 'green';
   }
 
+  onAddNewComponent() {
+
+    this.componentsList.push(name);
+
+  }
+
+  onRemoveComponent() {
+    this.componentsList.pop();
+  }
 }

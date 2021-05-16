@@ -1,5 +1,6 @@
 <h3>String Interpolation: <em class="bg-danger">{{ name }} is {{ getAge() }} {{ 'years' }} old.</em></h3>
-<p>Note: Expression enclosed by {{ 'expr' }} must return String or object that can be converted to String.</p>
+<p>Note: Expression enclosed by <em>{{ 'Curly Braces Block - { expr }' }}</em> must return String or object that can be
+  converted to String.</p>
 <hr>
 
 <div class="d-flex">
@@ -17,7 +18,8 @@
     <p class="mx-2">Age: {{ getAge() }}</p>
     <button class="btn mx-2"
             [ngClass]="{'btn-outline-danger': disableAgeMinus, 'btn-danger': !disableAgeMinus}"
-            [disabled]="disableAgeMinus" (click)="decrementAge()">-</button>
+            [disabled]="disableAgeMinus" (click)="decrementAge()">-
+    </button>
   </div>
 </div>
 <hr>
@@ -56,5 +58,19 @@
     </ng-template>
   </div>
 </div>
+<hr>
+
+<div>
+  <button class="btn btn-success mx-2" (click)="onAddNewComponent()">Add New Component</button>
+  <button class="btn btn-danger mx-2" (click)="onRemoveComponent()">Delete Component</button>
+
+  <div *ngFor="let comp of componentsList; let i = index;"
+       [ngStyle]="{backgroundColor: i % 2 == 0 ? 'lightcyan' : 'lightpink',
+       marginTop: '1em'}">
+    <p>{{ i }}. {{ name }}</p>
+  </div>
+
+</div>
+
 
 

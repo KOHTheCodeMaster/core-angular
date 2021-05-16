@@ -1,3 +1,14 @@
+# 9th Commit - ngFor directive
+--------------------------------
+
+1. ngFor -> 
+```html
+  <div *ngFor="let name of listOfNames; let i = index;"
+       [ngStyle]="{backgroundColor: i % 2 == 0 ? 'lightcyan' : 'lightpink'}">
+    <p>#: {{ i }} | Name: {{ name }}</p>
+  </div>
+```
+
 # 8th Commit - ngClass directive
 --------------------------------
 
