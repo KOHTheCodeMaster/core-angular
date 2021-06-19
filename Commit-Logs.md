@@ -1,3 +1,10 @@
+# 10th Commit - @Input() decorator
+--------------------------------
+
+1. Added new wrapper component -> data-binding-dive
+2. Refactored other existing components inside new wrapper component -> basic-principles
+3. `@Input('aliasName')` decorator used on fields for custom property binding outside of the class
+
 # 9th Commit - ngFor directive
 --------------------------------
 

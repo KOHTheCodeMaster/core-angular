@@ -1,0 +1,7 @@
+<div class="list-group-item"
+     [ngStyle]="{
+       color: 'white',
+       backgroundColor: movie.rating < 5 ? 'red' : 'green'
+     }">
+  <span>{{ movie.title }} - {{ movie.rating }}</span>
+</div>

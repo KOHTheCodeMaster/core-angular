@@ -1,0 +1,27 @@
+<div class="container">
+
+  <h3>Add New Movie</h3>
+
+  <div class="">
+    <div class="row">
+      <div class="col-lg-6">
+        <label for="inputMovieTitle">Title</label>
+        <input id="inputMovieTitle" type="text" class="form-control mt-2" [ngModel]="newMovieTitle">
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-6">
+        <label for="inputMovieRating">Rating</label>
+        <input id="inputMovieRating" type="number" class="form-control mt-2" [ngModel]="newMovieRating">
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Movie -->
+  <div class="row">
+    <div class="col-lg-6">
+      <button class="btn btn-primary mt-2 me-2" [disabled]="true" (click)="onAddMovie()">Add Movie</button>
+    </div>
+  </div>
+
+</div>
