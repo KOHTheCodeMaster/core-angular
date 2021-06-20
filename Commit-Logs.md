@@ -1,3 +1,9 @@
+# 13th Commit - @ViewChild() decorator
+--------------------------------------
+
+1. @ViewChild() decorator used for accessing Local References of HTML Template without being
+   passed as args. in method but directly via TypeScript without any method invocation.
+
 # 12th Commit - @Output('aliasName') & Local References in HTML Template
 ------------------------------------------------------------------------
 

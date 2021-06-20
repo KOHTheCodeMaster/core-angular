@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-movie-manager',
@@ -11,15 +11,19 @@ export class MovieManagerComponent implements OnInit {
   //  E.g.: (movieAdded)="invokeMethod($event)"
   @Output('postMovieAdded') movieAdded = new EventEmitter<{title: string, rating: number}>();
 
+  //  Access local reference of HTML Template directly without invoking any method
+  @ViewChild('titleInputElement', {static: true}) movieTitleInput: ElementRef;
+  @ViewChild('ratingInputElement', {static: true}) movieRatingInput: ElementRef;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAddMovie(titleInputElement: HTMLInputElement, ratingInputElement: HTMLInputElement) {
+  onAddMovie() {
     this.movieAdded.emit({
-      title: titleInputElement.value,
-      rating: parseInt(ratingInputElement.value)
+      title: this.movieTitleInput.nativeElement.value,
+      rating: parseInt(this.movieRatingInput.nativeElement.value)
     });
   }
 }
