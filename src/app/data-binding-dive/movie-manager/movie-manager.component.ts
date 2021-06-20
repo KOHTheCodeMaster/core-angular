@@ -9,20 +9,17 @@ export class MovieManagerComponent implements OnInit {
 
   //  @Output() allows to create custom event that will emit data which could be consumed in html as $event
   //  E.g.: (movieAdded)="invokeMethod($event)"
-  @Output() movieAdded = new EventEmitter<{title: string, rating: number}>();
-
-  newMovieTitle: string;
-  newMovieRating: number;
+  @Output('postMovieAdded') movieAdded = new EventEmitter<{title: string, rating: number}>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAddMovie() {
+  onAddMovie(titleInputElement: HTMLInputElement, ratingInputElement: HTMLInputElement) {
     this.movieAdded.emit({
-      title: this.newMovieTitle,
-      rating: this.newMovieRating
+      title: titleInputElement.value,
+      rating: parseInt(ratingInputElement.value)
     });
   }
 }

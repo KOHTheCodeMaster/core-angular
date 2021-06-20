@@ -1,3 +1,12 @@
+# 12th Commit - @Output('aliasName') & Local References in HTML Template
+------------------------------------------------------------------------
+
+1. `@Output('aliasName')` decorator used on custom events for providing different binding property name 
+    which could be used outside the class for reference of this property,
+    keeping the original property name accessible only within the class.
+2. Local References in HTML Template -> It could be used to pass the html elements to TypeScript methods.
+    E.g.: <span #localReferenceName></span>
+
 # 11th Commit - @Output() decorator
 --------------------------------
 

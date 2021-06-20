@@ -5,20 +5,22 @@
   <div class="row">
     <div class="col-lg-6">
       <label for="inputMovieTitle">Title</label>
-      <input id="inputMovieTitle" type="text" class="form-control mt-2" [(ngModel)]="newMovieTitle">
+      <input id="inputMovieTitle" type="text" class="form-control mt-2" #titleInputElement>
     </div>
   </div>
   <div class="row mt-2">
     <div class="col-lg-6">
       <label for="inputMovieRating">Rating</label>
-      <input id="inputMovieRating" type="number" class="form-control mt-2" [(ngModel)]="newMovieRating">
+      <input id="inputMovieRating" type="number" class="form-control mt-2" #ratingInputElement>
     </div>
   </div>
 
   <!-- Add Movie -->
   <div class="row">
     <div class="col-lg-6">
-      <button class="btn btn-primary mt-2 me-2" [disabled]="false" (click)="onAddMovie()">Add Movie</button>
+      <button class="btn btn-primary mt-2 me-2" [disabled]="false"
+              (click)="onAddMovie(titleInputElement, ratingInputElement)">Add Movie
+      </button>
     </div>
   </div>
 
