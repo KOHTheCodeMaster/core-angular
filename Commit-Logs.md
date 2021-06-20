@@ -1,3 +1,12 @@
+# 11th Commit - @Output() decorator
+--------------------------------
+
+1. Custom Event property using @Output() decorator 
+2. @Output() allows to create custom event that will emit data which could be consumed in html as $event <br>
+    E.g.: (movieAdded)="invokeMethod($event)" <br>
+    `@Output() movieAdded = new EventEmitter<{title: string, rating: number}>();`
+3. Removed movie-list component & merged it with app-data-binding-dive component.
+
 # 10th Commit - @Input() decorator
 --------------------------------
 

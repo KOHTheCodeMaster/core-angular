@@ -9,7 +9,6 @@ import {FormsModule} from "@angular/forms";
 import {BasicPrinciplesComponent} from './basic-principles/basic-principles.component';
 import {DataBindingDiveComponent} from './data-binding-dive/data-binding-dive.component';
 import {MovieManagerComponent} from './data-binding-dive/movie-manager/movie-manager.component';
-import {MovieListComponent} from './data-binding-dive/movie-list/movie-list.component';
 import {MovieComponent} from './data-binding-dive/movie/movie.component';
 
 @NgModule({
@@ -20,7 +19,6 @@ import {MovieComponent} from './data-binding-dive/movie/movie.component';
     BasicPrinciplesComponent,
     DataBindingDiveComponent,
     MovieManagerComponent,
-    MovieListComponent,
     MovieComponent
   ],
   imports: [

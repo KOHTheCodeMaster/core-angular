@@ -7,9 +7,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DataBindingDiveComponent implements OnInit {
 
+  // movieList = [{title: '3 Idiots', rating: 9}, {title: 'Indiana Jones', rating: 3}];
+  movieList: { title: string, rating: number }[] = [
+    {title: '3 Idiots', rating: 9},
+    {title: 'Indiana Jones', rating: 3}
+  ];
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onMovieAdded($event: { title: string; rating: number }) {
+    this.movieList.push($event);
   }
 
 }

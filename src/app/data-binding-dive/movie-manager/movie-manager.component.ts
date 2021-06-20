@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-movie-manager',
@@ -6,6 +6,10 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./movie-manager.component.css']
 })
 export class MovieManagerComponent implements OnInit {
+
+  //  @Output() allows to create custom event that will emit data which could be consumed in html as $event
+  //  E.g.: (movieAdded)="invokeMethod($event)"
+  @Output() movieAdded = new EventEmitter<{title: string, rating: number}>();
 
   newMovieTitle: string;
   newMovieRating: number;
@@ -16,11 +20,9 @@ export class MovieManagerComponent implements OnInit {
   }
 
   onAddMovie() {
-/*
-    let newMovie = {
+    this.movieAdded.emit({
       title: this.newMovieTitle,
       rating: this.newMovieRating
-    }
-*/
+    });
   }
 }
