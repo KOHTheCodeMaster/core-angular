@@ -1,3 +1,10 @@
+# 14th Commit - ng-content element
+--------------------------------------
+
+1. Content projection using ng-content.
+   This allows providing content from outside of the component.
+   E.g.: One could have a Card component which accepts content provided by another component.
+
 # 13th Commit - @ViewChild() decorator
 --------------------------------------
 

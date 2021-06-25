@@ -1,9 +1,17 @@
-
 <app-movie-manager (postMovieAdded)="onMovieAdded($event)"></app-movie-manager>
 <hr>
 
 <div class="container">
   <h3>Movie List</h3>
   <app-movie *ngFor="let movie of movieList" [movieElement]="movie">
+
+    <div class="list-group-item"
+         [ngStyle]="{
+           color: 'white',
+           backgroundColor: movie.rating < 5 ? 'red' : 'green'
+          }">
+      <span>{{ movie.title }} - {{ movie.rating }}</span>
+    </div>
+
   </app-movie>
 </div>
