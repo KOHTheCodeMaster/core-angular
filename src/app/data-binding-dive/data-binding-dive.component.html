@@ -2,16 +2,15 @@
 <hr>
 
 <div class="container">
+
   <h3>Movie List</h3>
-  <app-movie *ngFor="let movie of movieList" [movieElement]="movie">
 
-    <div class="list-group-item"
-         [ngStyle]="{
-           color: 'white',
-           backgroundColor: movie.rating < 5 ? 'red' : 'green'
-          }">
-      <span>{{ movie.title }} - {{ movie.rating }}</span>
-    </div>
+  <button class="btn btn-primary mr-2 mb-2" (click)="changeFirstMovie()">Change First Movie</button>
+  <button class="btn btn-primary mx-2 mb-2" (click)="deleteFirstMovie()">Destroy First Movie</button>
 
+  <app-movie *ngFor="let movie of movieList" [movieElement]="movie" [movieTitle]="movie.title">
+    <!--  Providing Content explicitly to the movie component  -->
+    <span>{{ movie.title }} - {{ movie.rating }}</span>
   </app-movie>
+
 </div>

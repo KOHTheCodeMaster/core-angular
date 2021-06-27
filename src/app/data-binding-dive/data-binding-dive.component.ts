@@ -13,13 +13,22 @@ export class DataBindingDiveComponent implements OnInit {
     {title: 'Indiana Jones', rating: 3}
   ];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
 
   onMovieAdded($event: { title: string; rating: number }) {
     this.movieList.push($event);
+  }
+
+  changeFirstMovie() {
+    if (this.movieList.length > 0) this.movieList[0].title += " Updated.";
+  }
+
+  deleteFirstMovie() {
+    this.movieList.splice(0, 1);
   }
 
 }

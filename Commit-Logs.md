@@ -1,3 +1,10 @@
+# 15th Commit - Component Lifecycle
+--------------------------------------
+
+1. Angular Component Life Cycle order:
+   constructor -> ngOnChanges -> ngOnInit -> ngDoCheck -> ngAfterContentInit -> ngAfterContentChecked ->
+   ngAfterViewInit -> ngAfterViewChecked -> ngOnDestroy
+   
 # 14th Commit - ng-content element
 --------------------------------------
 
