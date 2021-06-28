@@ -5,11 +5,13 @@ import {
   AfterViewInit,
   Component,
   DoCheck,
+  ElementRef,
   Input,
   OnChanges,
   OnDestroy,
   OnInit,
-  SimpleChanges
+  SimpleChanges,
+  ViewChild
 } from '@angular/core';
 
 @Component({
@@ -27,6 +29,9 @@ export class MovieComponent
   //  E.g.:  [movieElement]="{}" is Valid   |   [movie]="{}" is Invalid since alias name is required
   @Input('movieElement') movie: { title: string, rating: number };
   @Input() movieTitle: string;  //  primitive input-property for ngOnChanges()
+  @ViewChild('heading1', {static: true}) heading1: ElementRef;
+
+  // @ViewChild('ratingInputElement', {static: true}) movieRatingInput: ElementRef;
 
   /**
    * Invoked before all lifecycle hooks.
@@ -43,7 +48,7 @@ export class MovieComponent
    */
   ngOnChanges(changes: SimpleChanges): void {
     console.log('ngOnChanges.');
-    console.log(JSON.stringify(changes));
+    // console.log(JSON.stringify(changes));
     /*
       //  JSON for structure of changes instance
       let tempChanges = {
@@ -58,6 +63,8 @@ export class MovieComponent
    */
   ngOnInit(): void {
     console.log('ngOnInit.');
+    //  heading1 content ain't initialized yet
+    console.log('Heading1 Content: ' + this.heading1.nativeElement.textContent); //  prints nothing
   }
 
   /**
@@ -67,7 +74,7 @@ export class MovieComponent
    * i.e. whenever any event triggers angular to check for any changes.
    */
   ngDoCheck(): void {
-    console.log('ngDoCheck.' + this.movieTitle);
+    console.log('ngDoCheck. ' + this.movieTitle);
   }
 
   /**
@@ -76,6 +83,8 @@ export class MovieComponent
    */
   ngAfterContentInit(): void {
     console.log('ngAfterContentInit.');
+    //  heading1 content ain't initialized yet
+    // console.log('Heading1 Content: ' + this.heading1.nativeElement.textContent);
   }
 
   /**
@@ -93,6 +102,7 @@ export class MovieComponent
    */
   ngAfterViewInit(): void {
     console.log('ngAfterViewInit.');
+    console.log('Heading1 Content: ' + this.heading1.nativeElement.textContent); //  Content is initialized
   }
 
   /**

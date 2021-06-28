@@ -1,3 +1,8 @@
+# 16th Commit - @ViewChild() - ngAfterViewInit 
+--------------------------------------
+
+1. @ViewChild() content (textContent) initializes only after ngAfterViewInit() lifecycle hook
+   
 # 15th Commit - Component Lifecycle
 --------------------------------------
 

@@ -1,8 +1,9 @@
+<!--*ngIf="movie !== null"-->
 <div class="list-group-item"
-     *ngIf="movie != null"
      [ngStyle]="{
        color: 'white',
        backgroundColor: movie.rating < 5 ? 'red' : 'green'
      }">
+  <h1 #heading1>{{movieTitle}}</h1>
   <ng-content></ng-content>
 </div>
